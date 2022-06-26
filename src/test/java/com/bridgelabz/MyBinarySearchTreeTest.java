@@ -3,12 +3,15 @@ package com.bridgelabz;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MyBinarySearchTreeTest {
+import javax.print.attribute.standard.PresentationDirection;
+import java.lang.management.MemoryUsage;
+import java.util.TreeMap;
 
+public class MyBinarySearchTreeTest {
     @Test
     public void given3NumbersWhenAddedToBSTShouldReturnSize3() {
 
-        MyBinaryTree<Integer> myBinaryTree = new MyBinaryTree<>();
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
 
         myBinaryTree.add(56);
         myBinaryTree.add(30);
@@ -26,5 +29,13 @@ public class MyBinarySearchTreeTest {
 
         int size = myBinaryTree.getSize();
         Assertions.assertEquals(13,size);
+
+        boolean trueResult = myBinaryTree.search(63);
+        System.out.println(trueResult);
+        Assertions.assertTrue(trueResult);
+
+        boolean falseResult = myBinaryTree.search(120);
+        System.out.println(falseResult);
+        Assertions.assertFalse(falseResult);
     }
 }
